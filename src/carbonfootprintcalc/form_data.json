@@ -1,0 +1,20 @@
+[
+  {
+    "mode": "land",
+    "vehicle": "suv",
+    "from": "troy, ny",
+    "to": "ashland, ma"
+  },
+  {
+    "mode": "land",
+    "vehicle": "suv",
+    "from": "troy, ny",
+    "to": "ashland, ma"
+  },
+  {
+    "mode": "land",
+    "vehicle": "sedan",
+    "from": "new brunswick, nj",
+    "to": "troy, ny"
+  }
+]
