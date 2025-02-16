@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@firebase/auth": "^1.9.0",
     "body-parser": "^1.20.3",
     "canvas": "^2.11.2",
     "chart.js": "^4.4.7",

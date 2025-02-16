@@ -51,7 +51,6 @@ total_emissions = 0
 with open('/mnt/c/Users/adeoyo/Desktop/NSBE_HACK/hackathon/responses.json', 'r') as file:
     form_data = json.load(file)
 for entry in form_data:
-    print(entry)
     means = entry['mode']
     transport_mech = entry['vehicle']
     origin = entry['from']

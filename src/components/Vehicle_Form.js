@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
+import PlacesAutocomplete from 'react-places-autocomplete';
+import "../styles/form.css"
 
 const Vehicle_Form = () => {
   const [mode, setMode] = useState('');
@@ -7,9 +8,11 @@ const Vehicle_Form = () => {
   const [vehicleOptions, setVehicleOptions] = useState([]);
   const [from, setFrom] = useState('');
   const [to, setTo] = useState('');
+  const [date, setDate] = useState('');
   const [showVehicleSelect, setShowVehicleSelect] = useState(false);
   const [showLocationInputs, setShowLocationInputs] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false); // State to disable form after submission
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
   useEffect(() => {
     if (mode) {
       fetchVehicleOptions(mode);
@@ -24,7 +27,6 @@ const Vehicle_Form = () => {
       .then((data) => {
         const rows = data.split('\n').map(row => row.trim()).filter(row => row !== '');
         const options = rows.slice(1).map(row => row.split(',')[0]);
-        console.log(`Loaded ${mode} vehicle options:`, options);
         setVehicleOptions(options);
       })
       .catch((error) =>
@@ -33,11 +35,10 @@ const Vehicle_Form = () => {
   };
 
   const handleModeChange = (e) => {
-    if (isSubmitted) return; // Prevent changes after submission
-    const selectedMode = e.target.value;
-    setMode(selectedMode);
+    if (isSubmitted) return;
+    setMode(e.target.value);
     setVehicle('');
-    setShowVehicleSelect(selectedMode !== '');
+    setShowVehicleSelect(e.target.value !== '');
     setShowLocationInputs(false);
   };
 
@@ -49,13 +50,13 @@ const Vehicle_Form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!mode || !vehicle || !from || !to) {
+    if (!mode || !vehicle || !from || !to || !date) {
       alert("Please fill in all fields before submitting.");
       return;
     }
-  
-    const formData = { mode, vehicle, from, to };
-  
+
+    const formData = { mode, vehicle, from, to, date };
+
     fetch('http://localhost:5000/save-form-data', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -64,20 +65,12 @@ const Vehicle_Form = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log('Form data saved:', data);
-        setIsSubmitted(true); // Set state to show the confirmation message
+        setIsSubmitted(true);
       })
       .catch((error) => {
         console.error('Error saving form data:', error);
         alert("Error submitting form. Please try again.");
       });
-  };
-  
-  const handleFromSelect = (address) => {
-    if (!isSubmitted) setFrom(address);
-  };
-
-  const handleToSelect = (address) => {
-    if (!isSubmitted) setTo(address);
   };
 
   return (
@@ -114,7 +107,7 @@ const Vehicle_Form = () => {
 
           {showLocationInputs && (
             <>
-              <PlacesAutocomplete value={from} onChange={setFrom} onSelect={handleFromSelect}>
+              <PlacesAutocomplete value={from} onChange={setFrom} onSelect={setFrom}>
                 {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
                   <div>
                     <label htmlFor="from">Traveling From:</label>
@@ -134,7 +127,7 @@ const Vehicle_Form = () => {
                 )}
               </PlacesAutocomplete>
 
-              <PlacesAutocomplete value={to} onChange={setTo} onSelect={handleToSelect}>
+              <PlacesAutocomplete value={to} onChange={setTo} onSelect={setTo}>
                 {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
                   <div>
                     <label htmlFor="to">Traveling To:</label>
@@ -153,6 +146,17 @@ const Vehicle_Form = () => {
                   </div>
                 )}
               </PlacesAutocomplete>
+
+              {/* 🚀 NEW DATE INPUT */}
+              <label htmlFor="date">Travel Date:</label>
+              <input
+                type="date"
+                id="date"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+                disabled={isSubmitted}
+                required
+              />
 
               <button type="submit" disabled={isSubmitted}>Submit</button>
             </>

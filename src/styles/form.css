@@ -1,121 +1,150 @@
 /* 🚗 Vehicle Form Styles 🚗 */
 #transportForm {
-    width: 90%;
-    max-width: 500px;
-    margin: 20px auto;
+  width: 90%;
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 25px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: "Arial", sans-serif;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column; /* Ensures all inputs stack */
+  gap: 15px; /* Adds spacing between elements */
+}
+
+/* Labels */
+#transportForm label {
+  font-weight: bold;
+  color: #333;
+  font-size: 15px;
+}
+
+/* Dropdowns & Input Fields */
+#transportForm select,
+#transportForm input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #f9f9f9;
+  transition: border 0.3s ease, background 0.3s ease;
+  display: block; /* Ensures full-width alignment */
+}
+
+/* Spacing between grouped fields */
+#transportForm select,
+#transportForm input,
+.pac-container {
+  margin-top: 5px;
+}
+
+/* Input Hover & Focus */
+#transportForm select:hover,
+#transportForm input:hover,
+#transportForm select:focus,
+#transportForm input:focus {
+  border-color: #007bff;
+  background-color: #ffffff;
+  outline: none;
+}
+
+/* Submit Button */
+#transportForm button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#transportForm button:hover {
+  background-color: #0056b3;
+  transform: scale(1.02);
+}
+
+/* Disabled Fields */
+#transportForm select:disabled,
+#transportForm input:disabled,
+#transportForm button:disabled {
+  background-color: #e0e0e0;
+  color: #888;
+  cursor: not-allowed;
+}
+
+/* 🌎 Places Autocomplete Styles */
+.pac-container {
+  font-family: Arial, sans-serif;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pac-item {
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.pac-item:hover {
+  background-color: #f1f1f1;
+}
+
+/* ✅ Submission Window Styles */
+.submission-window {
+  text-align: center;
+  background-color: #f8f9fa;
+  padding: 25px;
+  border: 2px solid #28a745;
+  border-radius: 12px;
+  color: #28a745;
+  width: 85%;
+  max-width: 420px;
+  margin: 50px auto;
+  font-size: 18px;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.submission-window h2 {
+  color: #155724;
+}
+
+.submission-window p {
+  margin-bottom: 12px;
+}
+
+.submission-window button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.submission-window button:hover {
+  background-color: #218838;
+  transform: scale(1.02);
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 600px) {
+  #transportForm {
+    width: 95%;
     padding: 20px;
-    background-color: #f8f9fa;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
   }
-  
-  /* Labels */
-  #transportForm label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #333;
-  }
-  
-  /* Dropdowns & Input Fields */
-  #transportForm select,
-  #transportForm input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-  }
-  
-  /* Submit Button */
-  #transportForm button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-  
-  #transportForm button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Disable styles after submission */
-  #transportForm select:disabled,
-  #transportForm input:disabled,
-  #transportForm button:disabled {
-    background-color: #e0e0e0;
-    color: #888;
-    cursor: not-allowed;
-  }
-  
-  /* 🌎 Places Autocomplete Styles */
-  .pac-container {
-    font-family: Arial, sans-serif;
-    border-radius: 5px;
-  }
-  
-  .pac-item {
-    padding: 10px;
-    cursor: pointer;
-  }
-  
-  .pac-item:hover {
-    background-color: #f1f1f1;
-  }
-  
-  /* ✅ Submission Window Styles */
+
   .submission-window {
-    text-align: center;
-    background-color: #f8f9fa;
+    width: 90%;
     padding: 20px;
-    border: 2px solid #28a745;
-    border-radius: 10px;
-    color: #28a745;
-    width: 80%;
-    max-width: 400px;
-    margin: 50px auto;
-    font-size: 18px;
-    font-family: Arial, sans-serif;
   }
-  
-  .submission-window h2 {
-    color: #155724;
-  }
-  
-  .submission-window p {
-    margin-bottom: 10px;
-  }
-  
-  .submission-window button {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 16px;
-  }
-  
-  .submission-window button:hover {
-    background-color: #218838;
-  }
-  
-  /* 📱 Responsive Design */
-  @media (max-width: 600px) {
-    #transportForm {
-      width: 95%;
-      padding: 15px;
-    }
-  
-    .submission-window {
-      width: 90%;
-    }
-  }
-  
+}
+

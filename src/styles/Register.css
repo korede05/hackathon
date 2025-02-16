@@ -1,35 +1,58 @@
-/* Register.css */
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Register Container */
 .register-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #f4f4f4;
+    width: 100%;
+    padding: 20px;
 }
 
+/* Register Form */
 .register-form {
     background: #fff;
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 400px;
+    max-width: 420px;
+    transition: all 0.3s ease;
 }
 
+/* Header */
 .register-form h2 {
     text-align: center;
     margin-bottom: 1.5rem;
     color: #333;
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
+/* Form Fields */
 .register-form div {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .register-form label {
     display: block;
     margin-bottom: 0.5rem;
     color: #555;
+    font-weight: 500;
 }
 
 .register-form input {
@@ -38,40 +61,23 @@
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 1rem;
+    background-color: #fafafa;
+    transition: all 0.3s ease;
 }
 
 .register-form input:focus {
     border-color: #007bff;
     outline: none;
+    background-color: #fff;
 }
 
+/* Submit Button */
 .register-form button {
     width: 100%;
     padding: 0.75rem;
-    background-color: #007bff;
-    color: #fff;
     border: none;
     border-radius: 4px;
     font-size: 1rem;
-    cursor: pointer;
-    margin-top: 1rem;
-}
-
-.register-form button:hover {
-    background-color: #0056b3;
-}
-
-.register-form p {
-    text-align: center;
-    margin-top: 1rem;
-    color: #555;
-}
-
-.register-form a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-.register-form a:hover {
-    text-decoration: underline;
+    font-weight: 500;
+    color: #fff;
 }

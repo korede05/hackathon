@@ -23,7 +23,7 @@ const CarbonFootprint = () => {
                     <p>Calculate your carbon footprint to see how your daily activities impact the environment. Use the calculator below to get started!</p>
                     <div className = "CO2 Tracker">
                        <Vehicle_Form />
-                        <Emissions_Plot />
+                       
                     </div>
                 </section>
                  </div>

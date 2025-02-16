@@ -1,6 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {app} from "../firebase";
+import {auth} from "../firebase";
 import { useState } from "react";
 import "../styles/Register.css";
 import { createUserWithEmailAndPassword } from "../firebase";
@@ -8,11 +9,13 @@ import { createUserWithEmailAndPassword } from "../firebase";
 const Register = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
     const handleSubmit = async (e) => {
         e.preventDefault();
         try{
-            app.auth().createUserWithEmailAndPassword(email, password);
+            await createUserWithEmailAndPassword(auth, email, password); 
             console.log("User created successfully");
+            navigate('/login');
         }catch(error){
             console.log(error);
         }

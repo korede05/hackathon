@@ -6,6 +6,8 @@ import SearchResults from "./pages/recipe_map";
 import CarbonFootprint from './pages/carbonfootprint';
 import Register from "../src/components/Register";
 import Login from "../src/components/login";
+import About from "./pages/about";
+import Profile from "./pages/profile";
 import './App.css';
 
 function App() {
@@ -19,6 +21,8 @@ function App() {
         <Route exact path="/search" element={<SearchResults />} />
         <Route exact path='/carbon-footprint-calculator' element={<CarbonFootprint />} />
         <Route exact path='/register' element={<Register />} />
+        <Route exact path='/about' element={<About />} />
+        <Route exact path='/profile' element={<Profile />} />
       </Routes>
     </div>
   </Router>

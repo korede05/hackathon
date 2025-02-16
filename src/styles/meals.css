@@ -17,6 +17,7 @@
     background-size: cover;
     background-position: center;
     height: 100vh;
+    width: 225vh;
     display: flex;
     flex-direction: column;
     justify-content: center; /* Center content vertically */
@@ -29,7 +30,7 @@
   .meals .hero-content {
     z-index: 2;
     text-align: center;
-    font-size: 3rem; /* Adjusted font size */
+    font-size: 2.5rem; /* Adjusted font size */
     margin-bottom: 2rem; /* Add margin to separate from buttons */
     padding: 0 1rem; /* Add padding for smaller screens */
     flex-direction: column; /* Ensure vertical alignment */
@@ -81,4 +82,11 @@
     border: 1px solid #ccc;
     border-radius: 5px;
   }
-  
+  .meals iframe {
+    width: 90%;
+    max-width: 1200px;
+    height: 500px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border: 0;
+  }

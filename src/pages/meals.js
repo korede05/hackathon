@@ -42,6 +42,12 @@ const Meals = () => {
           </form>
         </div>
       </section>
+      <iframe 
+          src="https://ourworldindata.org/explorers/food-footprints?facet=none&country=Bananas~Beef+%28beef+herd%29~Beef+%28dairy+herd%29~Cheese~Eggs~Lamb+%26+Mutton~Milk~Maize~Nuts~Pig+Meat~Peas~Potatoes~Poultry+Meat~Rice~Tomatoes~Wheat+%26+Rye~Tofu+%28soybeans%29~Prawns+%28farmed%29&hideControls=true&Commodity+or+Specific+Food+Product=Commodity&Environmental+Impact=Carbon+footprint&Kilogram+%2F+Protein+%2F+Calories=Per+kilogram&By+stage+of+supply+chain=false&tab=chart" 
+          loading="lazy" 
+          style={{width: "100%", height: "600px", border: "0px none"}} 
+          allow="web-share; clipboard-write"
+        ></iframe>
     </div>
   );
 };
