@@ -1,0 +1,66 @@
+/* Carbon Footprint Page Styles */
+.carbon-footprint {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Hero Section */
+.carbon-hero {
+    width: 100%;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Carbon Footprint Content */
+.carbon-footprint-content {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.carbon-footprint-content h2 {
+    color: #007bff;
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.carbon-footprint-content p {
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* CO2 Tracker */
+.CO2-Tracker {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .carbon-hero {
+        height: 200px;
+        font-size: 20px;
+    }
+
+    .carbon-footprint-content {
+        padding: 15px;
+    }
+
+    #transportForm {
+        width: 90%;
+    }
+}

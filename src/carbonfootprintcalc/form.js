@@ -1,5 +1,6 @@
-
-
+import React from 'react';
+import "../styles/form.css";
+const Vehicle_Form = () => {
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.createElement('form');
     form.id = 'transportForm';
@@ -180,4 +181,5 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 });
-
+};
+export default Vehicle_Form;

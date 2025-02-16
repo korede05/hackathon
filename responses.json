@@ -1,0 +1,32 @@
+[
+  {
+    "mode": "land",
+    "vehicle": "sedan",
+    "from": "2324 15th Street, Troy, NY, USA",
+    "to": "Rensselaer Polytechnic Institute, 8th Street, Troy, NY, USA"
+  },
+  {
+    "mode": "land",
+    "vehicle": "sedan",
+    "from": "City Station West, 6th Avenue, Troy, NY, USA",
+    "to": "Rensselaer Polytechnic Institute, 8th Street, Troy, NY, USA"
+  },
+  {
+    "mode": "land",
+    "vehicle": "sedan",
+    "from": "2324 15th Street, Troy, NY, USA",
+    "to": "Rensselaer Polytechnic Institute, 8th Street, Troy, NY, USA"
+  },
+  {
+    "mode": "land",
+    "vehicle": "sedan",
+    "from": "115 4th Street, Troy, NY, USA",
+    "to": "Rensselaer Polytechnic Institute, 8th Street, Troy, NY, USA"
+  },
+  {
+    "mode": "land",
+    "vehicle": "sedan",
+    "from": "120 Hoosick Street, Troy, NY, USA",
+    "to": "Rensselaer Polytechnic Institute, 8th Street, Troy, NY, USA"
+  }
+]
