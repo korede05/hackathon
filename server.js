@@ -8,7 +8,11 @@ const app = express();
 const PORT = 5000;
 
 app.use(bodyParser.json());
-app.use(cors()); // Enable CORS for all routes
+app.use(cors({
+    origin: 'http://localhost:3000', // Allow only your frontend origin
+    methods: ['GET', 'POST'], // Allow the necessary methods
+    allowedHeaders: ['Content-Type'] // You can specify headers if needed
+  })); // Enable CORS for all routes
 
 // File path for responses.json
 const filePath = path.join(__dirname, 'responses.json');

@@ -1,4 +1,7 @@
+import matplotlib
+matplotlib.use("TkAgg")  # Use the Tkinter backend for interactive plotting
 import matplotlib.pyplot as plt
+import tkinter as tk
 import csv, requests, json
 
 API_KEY = 'AIzaSyBEPI6XdRhJcd_JYMUzaxEHs6kCPBPTJmE'
@@ -25,8 +28,9 @@ def get_distance(origin, destination):
         print(f"Error: {x.get('error_message')}")
     else:
         distance = (x['rows'][0]['elements'][0]['distance']['text']).replace(' km','')
+    
         
-    return int(distance)
+    return float(distance)
     
 def get_emissions(distance, emissions_per_gallon):
     return distance*emissions_per_gallon
@@ -44,10 +48,10 @@ add_data_to_dict(air_trans_types, air_file, 'Air')
 add_data_to_dict(sea_trans_types, sea_file, 'Sea')
 
 total_emissions = 0
-with open('form_data.json', 'r') as file:
+with open('/mnt/c/Users/adeoyo/Desktop/NSBE_HACK/hackathon/responses.json', 'r') as file:
     form_data = json.load(file)
-
 for entry in form_data:
+    print(entry)
     means = entry['mode']
     transport_mech = entry['vehicle']
     origin = entry['from']
@@ -83,6 +87,34 @@ days_month = ['Day {}'.format(i + 1) for i in range(30)]
 emissions_decade = [total_emissions * 365 * (i + 1) for i in range(10)]
 years_decade = ['Year {}'.format(i + 1) for i in range(10)]
 
+# Plot the graphs
+fig, axs = plt.subplots(3, 1, figsize=(10, 15))
+
+# Weekly emissions plot
+axs[0].plot(days_week, emissions_week, marker='o', linestyle='-', color='b')
+axs[0].set_title('Weekly Carbon Emissions')
+axs[0].set_xlabel('Days')
+axs[0].set_ylabel('Emissions (grams of CO2)')
+axs[0].tick_params(axis='x', rotation=45)
+
+# Monthly emissions plot
+axs[1].plot(days_month, emissions_month, marker='s', linestyle='-', color='g')
+axs[1].set_title('Monthly Carbon Emissions')
+axs[1].set_xlabel('Days')
+axs[1].set_ylabel('Emissions (grams of CO2)')
+axs[1].tick_params(axis='x', rotation=45)
+
+# Decade emissions plot
+axs[2].plot(years_decade, emissions_decade, marker='^', linestyle='-', color='r')
+axs[2].set_title('Yearly Carbon Emissions Over a Decade')
+axs[2].set_xlabel('Years')
+axs[2].set_ylabel('Emissions (grams of CO2)')
+axs[2].tick_params(axis='x', rotation=45)
+
+# Adjust layout and show plot
+plt.ion()  # Turn on interactive mode
+plt.show()
+input("Press Enter to exit...")
 
 
 
