@@ -5,10 +5,18 @@ import BackgroundImage from "../images/footprint_hero.jpg";
 
 const CarbonFootprint = () => {
    return (
-      <div>
+      <div className="carbon-footprint">
          <Navbar />
-         
-      </div>
+            <helmet>
+                <title>Carbon Footprint Calculator</title>
+            </helmet>
+            <section className = "carbon-hero"
+            style={{
+                backgroundImage: `url(${BackgroundImage})`,
+            }}
+            >
+                </section>
+                 </div>
    );
 };
 
