@@ -21,11 +21,11 @@ const Navbar = () => {
           <span className="bar"></span>
         </div>
         <ul className={`nav-links ${isOpen ? "open" : ""}`}>
-          <li><Link to="/about">About Us</Link></li>
-          <li><Link to="/meals">meals</Link></li>
+          <li><Link to="/meals">Meals</Link></li>
           <li><Link to="/carbon-footprint-calculator">Your Footprint</Link></li>
           <li><Link to ="/how-to-help">Take Action</Link></li>
           <li><Link to="/contact">Contact</Link></li>
+          <li><Link to="/login">Log In</Link></li>
         </ul>
       </nav>
     </header>

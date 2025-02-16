@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .home {
+    padding-top: 0px;
+    max-width: 100%;
+  }
+  
+  .home .hero {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    position: relative;
+    color: #000000;
+    text-align: center;
+  }
+  
+  .home .hero-content {
+    z-index: 2;
+    text-align: center;
+    font-size: 3rem; /* Adjusted font size */
+    margin-bottom: 2rem; /* Add margin to separate from buttons */
+    padding: 0 1rem; /* Add padding for smaller screens */
+    flex: 1; /* Ensure it takes up available space */
+    display: flex; /* Use flex to center text */
+    flex-direction: column; /* Ensure vertical alignment */
+    justify-content: center; /* Center text vertically */
+    color: #4a3c3c;
+  }
+  
+  .home .hero-buttons {
+    z-index: 2;
+    display: flex;
+    gap: 1.5rem; /* Space between buttons */
+    justify-content: center; /* Center buttons horizontally */
+  }
+  
+  .home .btn {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    background: #fff;
+    color: #000;
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none; /* Remove underline from links */
+    margin-top: 3rem; /* Add margin to separate from text */
+  }
+  
+  .home .btn.secondary {
+    background: rgba(255, 255, 255, 0.8);
+  }
+  
+  .home .btn:hover {
+    background: #f0f0f0;
+  }
